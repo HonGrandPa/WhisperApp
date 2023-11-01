@@ -216,12 +216,16 @@ img {
     }
 
     .submitbtn>button {
-        width: 80px;
-        height: 35px;
-        border-radius: 20px;
-        background-color: rgb(233, 232, 232, 0.25);
+
+        position: absolute;
+        font-size: 1rem;
+        top: 5px;
+        right: 18px;
+        text-decoration: none;
+        color: rgb(65, 53, 67);
+        background-color: transparent;
+        border: transparent;
         outline: none;
-        color: rgb(76, 76, 76);
     }
 
 }
