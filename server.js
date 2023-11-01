@@ -1,131 +1,131 @@
-import dotenv, { config } from "dotenv"
-dotenv.config();
-import express from "express";
-import bodyParser from "body-parser";
-import mongoose from "mongoose";
-import session from "express-session";
-import passport from "passport";
-import passportLocalMongoose from "passport-local-mongoose";
-import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
-import FacebookStrategy from "passport-facebook";
-import LineStrategy from "passport-line";
-import findOrCreate from "mongoose-findorcreate";
+// import dotenv, { config } from "dotenv"
+// dotenv.config();
+ import express from "express";
+// import bodyParser from "body-parser";
+// import mongoose from "mongoose";
+// import session from "express-session";
+// import passport from "passport";
+// import passportLocalMongoose from "passport-local-mongoose";
+// import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+// import FacebookStrategy from "passport-facebook";
+// import LineStrategy from "passport-line";
+// import findOrCreate from "mongoose-findorcreate";
 
 
 
 
-const app = express();
-const port = 3000;
+ const app = express();
+ const port = process.env.PORT || 3000;
 
 
-//throw it to env file make it invisible
-//npm i dotenv and place it on the top of program
-// const KEY = "HelloWorld"
+// //throw it to env file make it invisible
+// //npm i dotenv and place it on the top of program
+// // const KEY = "HelloWorld"
 
-app.use(express.json());
-app.use(bodyParser.json());
-app.use(express.static('public'));
-app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ extended: true }));
-//set up session config
-app.use(session({
-  secret: 'anything',
-  resave: false,
-  saveUninitialized: true
-}));
+// app.use(express.json());
+// app.use(bodyParser.json());
+// app.use(express.static('public'));
+// app.set('view engine', 'ejs');
+// app.use(bodyParser.urlencoded({ extended: true }));
+// //set up session config
+// app.use(session({
+//   secret: 'anything',
+//   resave: false,
+//   saveUninitialized: true
+// }));
 
-//trggilge the app to implement passport
-app.use(passport.initialize());
-//ask passport to activate seesion
-app.use(passport.session());
-
-
-
-//"local DB connection"
-mongoose.connect(process.env.DB_ADDRESS);
-
-//create a schema for user
-const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
-  googleId: String,
-  facebookId: String,
-  id: String
-});
-
-const secretSchema = new mongoose.Schema({
-
-    username: String,
-    secret:String
-})
-
-userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
-userSchema.plugin(findOrCreate);
+// //trggilge the app to implement passport
+// app.use(passport.initialize());
+// //ask passport to activate seesion
+// app.use(passport.session());
 
 
-//create the user collection
-const Users = new mongoose.model("User", userSchema);
 
-const Secrets = new mongoose.model("Secret", secretSchema);
+// //"local DB connection"
+// mongoose.connect(process.env.DB_ADDRESS);
 
-passport.use(Users.createStrategy());
+// //create a schema for user
+// const userSchema = new mongoose.Schema({
+//   email: String,
+//   password: String,
+//   googleId: String,
+//   facebookId: String,
+//   id: String
+// });
 
-// passport.serializeUser(Users.serializeUser());
-// passport.deserializeUser(Users.deserializeUser());
-passport.serializeUser(function (user, cb) {
-  process.nextTick(function () {
-    console.log("ser:" + user)
-    return cb(null, {
-      id: user._id,
-      username: user.username,
-      picture: user.picture
-    });
-  });
-});
+// const secretSchema = new mongoose.Schema({
 
-passport.deserializeUser(function (user, cb) {
+//     username: String,
+//     secret:String
+// })
 
-  process.nextTick(function () {
+// userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
+// userSchema.plugin(findOrCreate);
 
-    return cb(null, user);
-  });
-});
 
-passport.use(new GoogleStrategy({
-  clientID: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/goolge/secret"
-},
-  function (accessToken, refreshToken, profile, cb) {
-    Users.findOrCreate({ googleId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
-  }
-));
+// //create the user collection
+// const Users = new mongoose.model("User", userSchema);
 
-passport.use(new FacebookStrategy({
-  clientID: process.env.APP_ID,
-  clientSecret: process.env.APP_SECRET,
-  callbackURL: "http://localhost:3000/auth/facebook/secret"
-},
-  function (accessToken, refreshToken, profile, cb) {
-    Users.findOrCreate({ facebookId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
-  }
-));
+// const Secrets = new mongoose.model("Secret", secretSchema);
 
-passport.use(new LineStrategy({
-  channelID: process.env.LINE_CHANNEL_ID,
-  channelSecret: process.env.LINE_CHANNEL_SECRET,
-  callbackURL: "http://localhost:3000/auth/line/secret"
-},
-  function (accessToken, refreshToken, profile, done) {
-    Users.findOrCreate({ id: profile.id }, function (err, user) {
-      return done(err, user);
-    });
-  }
-));
+// passport.use(Users.createStrategy());
+
+// // passport.serializeUser(Users.serializeUser());
+// // passport.deserializeUser(Users.deserializeUser());
+// passport.serializeUser(function (user, cb) {
+//   process.nextTick(function () {
+//     console.log("ser:" + user)
+//     return cb(null, {
+//       id: user._id,
+//       username: user.username,
+//       picture: user.picture
+//     });
+//   });
+// });
+
+// passport.deserializeUser(function (user, cb) {
+
+//   process.nextTick(function () {
+
+//     return cb(null, user);
+//   });
+// });
+
+// passport.use(new GoogleStrategy({
+//   clientID: process.env.CLIENT_ID,
+//   clientSecret: process.env.CLIENT_SECRET,
+//   callbackURL: "http://localhost:3000/auth/goolge/secret"
+// },
+//   function (accessToken, refreshToken, profile, cb) {
+//     Users.findOrCreate({ googleId: profile.id }, function (err, user) {
+//       return cb(err, user);
+//     });
+//   }
+// ));
+
+// passport.use(new FacebookStrategy({
+//   clientID: process.env.APP_ID,
+//   clientSecret: process.env.APP_SECRET,
+//   callbackURL: "http://localhost:3000/auth/facebook/secret"
+// },
+//   function (accessToken, refreshToken, profile, cb) {
+//     Users.findOrCreate({ facebookId: profile.id }, function (err, user) {
+//       return cb(err, user);
+//     });
+//   }
+// ));
+
+// passport.use(new LineStrategy({
+//   channelID: process.env.LINE_CHANNEL_ID,
+//   channelSecret: process.env.LINE_CHANNEL_SECRET,
+//   callbackURL: "http://localhost:3000/auth/line/secret"
+// },
+//   function (accessToken, refreshToken, profile, done) {
+//     Users.findOrCreate({ id: profile.id }, function (err, user) {
+//       return done(err, user);
+//     });
+//   }
+// ));
 
 //dir to home page (login page)
 app.get("/", function (req, res) {
@@ -135,7 +135,7 @@ app.get("/", function (req, res) {
 
   //   res.redirect("/main");
 
-  // } else {
+//  } else {
 
     res.render("home");
 
@@ -143,255 +143,261 @@ app.get("/", function (req, res) {
 });
 
 //dir to regis page
-app.get("/singup", function (req, res) {
+// app.get("/singup", function (req, res) {
 
-  res.render("signup");
+//   res.render("signup");
 
-});
-
-
-
-//dir to post page
-app.get("/submit", function (req, res) {
+// });
 
 
 
-  res.render("submit");
-})
-
-
-//dir to secret page
-app.get("/main", async function (req, res) {
+// //dir to post page
+// app.get("/submit", function (req, res) {
 
 
 
-  const secret = await Secrets.find({})
-
-  if(req.isAuthenticated()) {
-
-    res.render("main", {
-
-      secrets: secret
-
-    })
-
-  } else {
+//   res.render("submit");
+// })
 
 
-    res.redirect("/");
+// //dir to secret page
+// app.get("/main", async function (req, res) {
 
-  }
+
+
+//   const secret = await Secrets.find({})
+
+//   if(req.isAuthenticated()) {
+
+//     res.render("main", {
+
+//       secrets: secret
+
+//     })
+
+//   } else {
+
+
+//     res.redirect("/");
+
+//   }
 
   
 
-});
+// });
 
-//registeration fail -> username exiting
-app.get("/userexit", function (req, res) {
+// //registeration fail -> username exiting
+// app.get("/userexit", function (req, res) {
 
-  res.render("signupfail");
-})
+//   res.render("signupfail");
+// })
 
-//login fail -> user does not exit
-app.get("/unknownUser", function (req, res) {
+// //login fail -> user does not exit
+// app.get("/unknownUser", function (req, res) {
 
-  res.render("loginemailfail");
-})
+//   res.render("loginemailfail");
+// })
 
-//login fail -> incorrect password
-app.get("/wrongpassword", function (req, res) {
+// //login fail -> incorrect password
+// app.get("/wrongpassword", function (req, res) {
 
-  res.render("loginpasswordfail")
-})
+//   res.render("loginpasswordfail")
+// })
 
 
-app.get("/auth/goolge/secret", passport.authenticate('google', { failureRedirect: '/signup' }), function (req, res) {
-  // Successful authentication, redirect home.
-  res.redirect('/');
-});
+// app.get("/auth/goolge/secret", passport.authenticate('google', { failureRedirect: '/signup' }), function (req, res) {
+//   // Successful authentication, redirect home.
+//   res.redirect('/');
+// });
 
 
 
-app.get('/auth/facebook/secret', passport.authenticate('facebook', { failureRedirect: '/signup' }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-  });
+// app.get('/auth/facebook/secret', passport.authenticate('facebook', { failureRedirect: '/signup' }),
+//   function (req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect('/');
+//   });
 
 
-app.get('/auth/line/secret', passport.authenticate('line', { failureRedirect: '/signup', successRedirect: '/' }));
+// app.get('/auth/line/secret', passport.authenticate('line', { failureRedirect: '/signup', successRedirect: '/' }));
 
 
 
 
-app.post("/register", async function (req, res) {
+// app.post("/register", async function (req, res) {
 
 
 
-  const foundUser = await Users.findOne({ email: req.body.email });
+//   const foundUser = await Users.findOne({ email: req.body.email });
 
-  //if user name is in used
-  if (foundUser) {
+//   //if user name is in used
+//   if (foundUser) {
 
-    console.log(foundUser);
-    console.log("Registeration Fail: UserName exiting");
-    res.redirect("/userexit");
+//     console.log(foundUser);
+//     console.log("Registeration Fail: UserName exiting");
+//     res.redirect("/userexit");
 
-  } else {
+//   } else {
 
 
-    Users.register({ email: req.body.email }, req.body.password, function (err, newUser) {
+//     Users.register({ email: req.body.email }, req.body.password, function (err, newUser) {
 
-      if (err) {
+//       if (err) {
 
-        console.log(err);
-        res.redirect("/singup");
+//         console.log(err);
+//         res.redirect("/singup");
 
-      } else {
+//       } else {
 
-        //trigger the authentication sucess and store the cookie
-        passport.authenticate("local")(req, res, function () {
+//         //trigger the authentication sucess and store the cookie
+//         passport.authenticate("local")(req, res, function () {
 
-          console.log("This is when create" + req.user);
-          console.log("New User info has been added to DB")
-          res.redirect("/");
-        });
+//           console.log("This is when create" + req.user);
+//           console.log("New User info has been added to DB")
+//           res.redirect("/");
+//         });
 
-      }
-    });
-  }
+//       }
+//     });
+//   }
 
-});
+// });
 
 
-//this is for log in
-app.post("/login", async function (req, res, next) {
+// //this is for log in
+// app.post("/login", async function (req, res, next) {
 
-  const returnUser = new Users({
+//   const returnUser = new Users({
 
-    email: req.body.email,
-    password: req.body.password
-  });
+//     email: req.body.email,
+//     password: req.body.password
+//   });
 
-  //check if the user exiting
-  const foundUser = await Users.findOne({ email: returnUser.email });
+//   //check if the user exiting
+//   const foundUser = await Users.findOne({ email: returnUser.email });
 
 
-  if (!foundUser) {
+//   if (!foundUser) {
 
-    console.log("User Not Found!")
-    res.redirect("/unknownUser")
+//     console.log("User Not Found!")
+//     res.redirect("/unknownUser")
 
-  } else {
+//   } else {
 
-    passport.authenticate('local', function (err, user, info) {
-      if (err) {
-        return next(err); // Handle the error
-      }
-      if (!user) {
-        // Handle the case where login fails (incorrect username or password)
-        return res.redirect('/wrongpassword');
-      }
-      req.login(user, function (err) {
-        if (err) {
-          return next(err); // Handle the error
-        }
-        // Successfully logged in
-        return res.redirect('/main');
-      });
-    })(req, res, next);
-  }
-})
+//     passport.authenticate('local', function (err, user, info) {
+//       if (err) {
+//         return next(err); // Handle the error
+//       }
+//       if (!user) {
+//         // Handle the case where login fails (incorrect username or password)
+//         return res.redirect('/wrongpassword');
+//       }
+//       req.login(user, function (err) {
+//         if (err) {
+//           return next(err); // Handle the error
+//         }
+//         // Successfully logged in
+//         return res.redirect('/main');
+//       });
+//     })(req, res, next);
+//   }
+// })
 
 
 
 
-app.post("/share", function (req, res) {
+// app.post("/share", function (req, res) {
 
-  if (req.isAuthenticated()) {
+//   if (req.isAuthenticated()) {
 
-    res.redirect("/submit");
+//     res.redirect("/submit");
 
-  } else {
+//   } else {
 
-    res.redirect('/');
-  }
-});
+//     res.redirect('/');
+//   }
+// });
 
 
 
 
-app.post("/logout", function (req, res) {
+// app.post("/logout", function (req, res) {
 
-  req.logout(function (err) {
+//   req.logout(function (err) {
 
-    if (err) { return next(err); }
+//     if (err) { return next(err); }
 
-    res.redirect('/');
+//     res.redirect('/');
 
-  });
+//   });
 
 
-});
+// });
 
 
 
-app.post("/auth/google", function (req, res, next) {
+// app.post("/auth/google", function (req, res, next) {
 
-  passport.authenticate("google", { scope: ["profile"] })(req, res, next);
-})
+//   passport.authenticate("google", { scope: ["profile"] })(req, res, next);
+// })
 
-app.post("/auth/facbook", passport.authenticate('facebook'));
+// app.post("/auth/facbook", passport.authenticate('facebook'));
 
 
-app.post("/auth/line", passport.authenticate('line'));
+// app.post("/auth/line", passport.authenticate('line'));
 
 
-app.post("/submit", function (req, res) {
+// app.post("/submit", function (req, res) {
 
 
-  const inputSecret = req.body.secret;
+//   const inputSecret = req.body.secret;
 
-  console.log(`Inpute secret is: ${inputSecret}`);
+//   console.log(`Inpute secret is: ${inputSecret}`);
 
-  console.log(req.user)
+//   console.log(req.user)
  
-  //store into SecretDB 
+//   //store into SecretDB 
 
   
 
-  const newSecret  = new Secrets ({
+//   const newSecret  = new Secrets ({
 
 
-      username: req.user.id,
-      secret: inputSecret
+//       username: req.user.id,
+//       secret: inputSecret
 
-  });
+//   });
 
-  console.log("This is the Secret: " + newSecret);
+//   console.log("This is the Secret: " + newSecret);
 
-  newSecret.save()
+//   newSecret.save()
 
-  .then(result => {
+//   .then(result => {
 
-    console.log("New Secret has been Saved");
+//     console.log("New Secret has been Saved");
 
-    res.redirect("/main");
+//     res.redirect("/main");
 
-  })
+//   })
 
-  .catch(err => {
+//   .catch(err => {
 
+//     console.log(err);
+
+//     res.redirect("/")
+//   })
+
+// })
+
+
+app.listen(port, function (err) {
+
+  if (err) {
     console.log(err);
 
-    res.redirect("/")
-  })
+  } else {
 
-})
-
-
-app.listen(process.env.PORT || port, () => {
-
-  console.log("connect")
+    console.log("sucessfully connected")
+  }
 
 });
