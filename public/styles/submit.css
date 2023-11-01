@@ -11,7 +11,6 @@ body {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(180deg, #BA94D1, #FFFBF5);
-    overflow: hidden;
     padding-top: 75px;
 
 }
@@ -25,6 +24,11 @@ body {
     max-width: 900px;
     margin-top: 50px;
 
+}
+
+img {
+
+    height: 80px;
 }
 
 .titlecontainer {
@@ -90,8 +94,6 @@ body {
     background-color: rgb(255, 251, 245, 0.45);
     border: 1px solid #ddd;
     color: rgb(9, 8, 8, 0.72)
-    
-
 }
 
 
@@ -134,8 +136,8 @@ body {
     border-radius: 20px;
     background-color: rgb(233, 232, 232, 0.25);
     border: 1px solid gray;
-    
-    
+
+
 }
 
 .submitbtn p {
@@ -157,9 +159,67 @@ body {
     box-shadow: 2px 2px 2px 0px rgb(113, 111, 129, 0.4);
 }
 
-.submitbtn > input:hover ~ p {
+.submitbtn>input:hover~p {
 
     color: gray;
-    
+
 }
 
+@media screen and (max-width: 480px) {
+
+    body {
+
+        padding-top: 0;
+    }
+
+    .titlecontainer {
+        margin-top: 0px;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .titlecontainer h1 {
+        font-size: 2.8rem;
+        font-family: 'Walter Turncoat', cursive;
+        font-weight: 400;
+        color: rgb(9, 8, 8, 0.9);
+    }
+
+    .inputcontainer label {
+        font-size: medium;
+        position: absolute;
+        left: 20%;
+        top: 15px;
+        transition: .3s;
+        color: gray;
+    }
+
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 900px;
+        margin-top: 0px;
+        height: 100vh;
+    }
+
+    .submitbtn {
+        padding-top: 5%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding-left: 25%;
+    }
+
+    .submitbtn>input {
+        width: 80px;
+        height: 35px;
+        border-radius: 20px;
+        background-color: rgb(233, 232, 232, 0.25);
+        border: 1px solid gray;
+    }
+
+}

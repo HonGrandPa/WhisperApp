@@ -13,8 +13,8 @@ body {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(180deg, #BA94D1, #FFFBF5);
-    overflow: hidden;
-    position: relative;
+    padding-top: 40px;
+
 
 }
 
@@ -28,7 +28,7 @@ body {
     border: 1px solid gray;
     max-width: 500px;
     border-radius: 25px;
-    position: absolute;
+
     top: 10%;
     left: 33%;
 }
@@ -361,4 +361,87 @@ h3 {
 
     color: transparent;
   
+}
+
+
+@media screen and (max-width: 480px) {
+
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(232, 232, 232, 0.25);
+        border: 1px solid gray;
+        max-width: 500px;
+        height: 100vh;
+        border-radius: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .container>h1 {
+        font-family: 'Nosifer', sans-serif;
+        text-align: center;
+        font-size: 3rem;
+        padding-bottom: 35px;
+        color: rgba(27, 29, 29, 0.72);
+    }
+
+    .inputcontainer {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .inputcontainer .inputbox {
+        position: relative;
+        border-bottom: 1px solid gray;
+        width: 92%;
+        margin: 15px;
+
+    }
+
+    .buttoncontainer {
+        display: flex;
+        position: absolute;
+        right: -50px;
+        top: -1.2px;
+    }
+
+    .signup {
+        text-align: center;
+        font-size: 0.8rem;
+        padding-right: 0;
+        padding-top: 15px;
+        color: gray;
+        outline: none;
+    }
+
+    .otherbtncontainer {
+
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    
+    }
+
+    .containerforcheckboxandloginbtn {
+        margin-top: 25px;
+        padding-top: 5.6px;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+    }
+    
+
+    .forgetandsignup p {
+        padding-bottom: 20px;
+        font-size: small;
+        color: gray;
+    }
+    
+
 }

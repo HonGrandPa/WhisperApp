@@ -12,7 +12,7 @@ body {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(180deg, #BA94D1, #FFFBF5);
-  
+
 
 }
 
@@ -85,7 +85,7 @@ body {
 
 .content * {
 
-   
+
     min-height: 3rem;
     border: 2px double rgb(103, 65, 136, 0.75);
     border-radius: 10px;
@@ -109,7 +109,7 @@ body {
     margin-bottom: 20px;
     gap: 5%;
     padding-left: 5px;
-   
+
 }
 
 .logoutbtn {
@@ -118,14 +118,14 @@ body {
     width: 120px;
     border-radius: 25px;
     border: none;
-    
+
     cursor: pointer;
     transition: .3s;
 }
 
 .logoutbtn input {
 
-   
+
     font-size: 1.38rem;
     top: 7px;
     right: 23%;
@@ -136,7 +136,7 @@ body {
     width: 120px;
     color: rgb(65, 53, 67);
     background-color: transparent;
-    
+
 }
 
 
@@ -169,7 +169,7 @@ body {
     background-color: transparent;
     border: transparent;
     outline: none;
-   
+
 }
 
 
@@ -193,4 +193,108 @@ body {
 .tu {
 
     font-size: 3rem;
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .tiltecontainer>h1 {
+        font-size: 5.2rem;
+        margin-bottom: -10px;
+        font-family: 'Cabin Sketch', sans-serif;
+        font-weight: 800;
+        color: rgb(9, 8, 8, 0.9);
+    }
+
+    .fu {
+        font-size: 4rem;
+    }
+
+    .su {
+        font-size: 3.2rem;
+    }
+
+    .tu {
+        font-size: 2.2rem;
+    }
+
+    img {
+        height: 70px;
+        vertical-align: middle;
+        border-style: none;
+    }
+
+    .tiltecontainer h2 {
+        font-size: 2rem;
+        padding-left: 23%;
+        padding-bottom: 7%;
+        font-family: 'Cabin Sketch', sans-serif;
+        font-weight: 800;
+        color: rgb(9, 8, 8, 0.9);
+    }
+
+    .content {
+        width: 90%;
+    }
+
+    .content * {
+        min-height: 3rem;
+        border: 2px double rgb(103, 65, 136, 0.75);
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.2rem;
+        align-items: center;
+        padding-top: 0.5rem;
+        font-family: 'Cabin Sketch', sans-serif;
+        color: rgb(65, 53, 67);
+    }
+
+    .buttoncontainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 0;
+        padding-left: 0;
+    }
+
+    .logoutbtn input {
+        font-size: 1rem;
+        top: 7px;
+        right: 23%;
+        text-decoration: none;
+        border-radius: 25px;
+        border: 0.125px solid rgb(114, 112, 112);
+        height: 35px;
+        width: 80px;
+        color: rgb(65, 53, 67);
+        background-color: transparent;
+    }
+
+    .submitbtn {
+        height: 35px;
+        width: 140px;
+        border-radius: 25px;
+        border: 0.125px solid rgb(114, 112, 112);
+        position: relative;
+        margin-left: 20px;
+        transition: .3s;
+        cursor: pointer;
+        margin-bottom: 5%;
+    }
+
+    .submitbtn button {
+        position: absolute;
+        font-size: 1rem;
+        top: 5px;
+        right: 20px;
+        text-decoration: none;
+        color: rgb(65, 53, 67);
+        background-color: transparent;
+        border: transparent;
+        outline: none;
+    }
+
 }
