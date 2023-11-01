@@ -1,0 +1,364 @@
+
+* {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Signika', sans-serif;
+}
+
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #BA94D1, #FFFBF5);
+    overflow: hidden;
+    position: relative;
+
+}
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(232, 232, 232, 0.25);
+    border: 1px solid gray;
+    max-width: 500px;
+    border-radius: 25px;
+    position: absolute;
+    top: 10%;
+    left: 33%;
+}
+
+.container>h1 {
+
+    font-family: 'Nosifer', sans-serif;
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 40px;
+    color: rgba(27, 29, 29, 0.72)
+}
+
+
+.inputcontainer {
+
+    width: 100%;
+    padding-left: 12%;
+}
+
+.inputcontainer .inputbox {
+
+    position: relative;
+    border-bottom: 1px solid gray;
+    width: 80%;
+    margin: 15px;
+}
+
+
+.inputcontainer .inputbox input {
+
+    width: 100%;
+    height: 2.5rem;
+    padding-left: 1px;
+    background-color: transparent;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+   
+
+}
+
+
+.inputbox label {
+
+    position: absolute;
+    pointer-events: none;
+    color: gray;
+    left: 0;
+    top: 0;
+    transform: translateY(50%);
+    transition: 0.5s;
+}
+
+
+
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label,
+.inputbox input:not([value=""])~label {
+
+    top: -25px;
+    color: #827397;
+  
+}
+
+
+/* .inputbox #email:focus ~ label,
+.inputbox #email:valid ~ label,
+.inputbox #email:not([value=""]) ~ label {
+
+    top: -25px;
+    color: #827397;
+
+} */
+
+/* .inputbox #password:focus ~ label,
+.inputbox #password:valid ~ label {
+
+    top: -25px;
+    color: #827397;
+
+
+} */
+
+
+
+
+
+.containerforcheckboxandloginbtn {
+
+    padding-top: 5.6px;
+    display: flex; 
+    position: relative;
+    justify-content: space-between;
+}
+
+.checkboxcontainer {
+ 
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+   
+}
+
+.loginbtn {
+
+    margin-right: 40px;
+    margin-bottom: 15px;
+    
+    
+}
+
+.buttoncontainer {
+
+    display: flex;
+}
+
+.checkboxcontainer > input {
+
+   
+    height: 15px;
+    margin-bottom: 15px;
+    background-color: rgb(255, 251, 245, 0.8);
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    width: 15px;
+    cursor: pointer;
+}
+
+#checkbox:hover {
+    transition: .5s;
+    background-color: #BA94D1;
+}
+
+#checkbox:checked {
+    background-color: #BA94D1;
+}
+
+.checkboxlabel {
+    padding-bottom: 5px;
+}
+
+#checkbox:checked:hover {
+
+    transition: 1.8s;
+    background-color: rgb(232, 232, 232, 0.25);
+}
+
+.loginbtn > button {
+
+    border-radius: 20px;
+    height: 35px;
+    width: 80px;
+    margin-right: 30px;
+    background-color: rgb(233, 232, 232, 0.25);
+    border: 0.5px solid;
+    outline: none;
+    
+
+
+}
+
+.signupbtn > button {
+
+    border-radius: 20px;
+    height: 35px;
+    width: 80px;
+    margin-right: 30px;
+    background-color: rgb(233, 232, 232, 0.25);
+    border: 0.5px solid;
+    
+
+
+}
+
+
+.signupbtn > button:hover{
+
+
+    transition: .25s;
+    background-color: rgb(195, 172, 208)
+}
+
+
+.loginbtn > button:hover {
+
+    transition: .25s;
+    background-color: rgb(195, 172, 208)
+
+} 
+
+
+.OtherLogin {
+
+    margin-top: 10px;
+    width: 100%;
+    color: gray;
+
+}
+
+h3 {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h3 span {
+    background: #fff;
+    margin: 0 15px;
+  }
+  h3:before,
+  h3:after {
+    background: rgb(125, 124, 124, 0.5);
+    height: 3px;
+    flex: 1;
+    content: '';
+  }
+  h3.left:after {
+    background: none;
+  }
+  h3.right:before {
+    background: none;
+  }
+  
+
+  
+  .forgetandsignup {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+   
+  }
+
+  .forgetandsignup p{
+
+    font-size: small;
+    color: gray
+
+    
+  }
+
+
+.signup {
+
+    text-align: center;
+    font-size: 0.8rem;
+    padding-right: 13%;
+    padding-top: 3px;
+    color: gray;
+    outline: none;
+}
+
+.signup  a {
+
+    
+    color: #BA94D1;
+    
+    
+}
+
+
+.signup  a:hover{
+
+    text-decoration: none;
+    color: #319DA0;
+    font-size: 0.9rem;
+}
+
+
+
+
+.otherbtncontainer button {
+
+    height: 40px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    outline: none;
+}
+
+
+
+.otherbtncontainer button:hover {
+
+    background: rgb(255, 251, 245, 0.4);
+}
+
+.emailcontainer p {
+
+    position: absolute;
+    font-size: 0.6rem;
+    right: 0;
+    color: rgba(76, 76, 76, 0.8); 
+    transition: 0.3s;
+    top: 110%;
+}
+
+.inputbox input:focus ~ p,
+.inputbox input:valid ~ p,
+.inputbox input:not([value=""])~p{
+
+    color: transparent;
+  
+}
+
+.passwordcontainer p {
+
+    position: absolute;
+    font-size: 0.6rem;
+    right: 0;
+    color: rgba(76, 76, 76, 0.8); 
+    transition: 0.3s;
+    top: 110%;
+}
+
+.inputbox input:focus ~ p,
+.inputbox input:valid ~ p,
+.inputbox input:not([value=""])~p{
+
+    color: transparent;
+  
+}

@@ -1,0 +1,47 @@
+<%- include("partials/header") %>
+    <link rel="stylesheet" href="/styles/main.css">
+
+    </head>
+
+
+    <div class="container">
+        <div class="tiltecontainer">
+            <h1>Sh<span class="fu">U</span><span class="su">U</span><span class="tu">U</span>...<img src="/images/pics/icons8-quiet-100.png" alt="shuu"></h1>
+            <h2>Keep It <span class="low">LOW</span></h2>
+        </div>
+        <div class="content">
+
+            <%  secrets.forEach(secret => { %>
+
+                <p><%= secret.secret  %></p>
+                
+            <%})%>
+            
+        </div>
+        <div class="buttoncontainer">
+            <form class="logoutbtn" method="POST", action="/logout">
+                <!-- <a mathod="POST" href="/logout" role="button">log out</a> -->
+                <input type="submit" value="Log Out">
+            </form>
+            
+         
+            <form class="submitbtn" method="POST" action="/share">
+                <button type="submit">Share a Secret</button>
+            </form>
+          
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <%- include("partials/footer") %>

@@ -1,0 +1,72 @@
+<%- include("partials/header") %>
+    <link rel="stylesheet" href="styles/home.css">
+    </head>
+
+    <div class="container">
+        <h1>Just Between Us</h1>
+        <form class="inputcontainer" action="/login" method="POST">
+            <div class="inputbox">
+                <input type="email" name="email" id="email" value="" required
+                    onkeyup="this.setAttribute('value', this.value)" autocomplete="off">
+                <label for="email">Username</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="password" id="password" value="" required
+                    onkeyup="this.setAttribute('value', this.value)" autocomplete="off">
+                <label for="password">Passowrd</label>
+            </div>
+
+            <div class="containerforcheckboxandloginbtn">
+                <div class="checkboxcontainer">
+                    <input type="checkbox" name="checkbox" id="checkbox" value="isremeber">
+                    <label for="checkbox" class="checkboxlabel">Remeber me</label>
+                </div>
+                <div class="buttoncontainer">
+                    <div class="loginbtn">
+                        <button type="submit" id="login">Login</button>
+                    </div>
+                </div>
+            </div>
+            <div class="signup">
+                <p>Don't have an account? <a href="/singup">Sign Up</a></p>
+            </div>
+        </form>
+
+        <div class="OtherLogin">
+            <h3>
+                <span class="linebefore"></span>
+                or try another login method
+                <span class="lineafter"></span>
+            </h3>
+            <div class="otherbtncontainer">
+                <form action="/auth/google" method="POST">
+                    <button class="btn btn-lg btn-block btn-primary" style="background-color: #F4511E; outline: none; margin-bottom: 8px;" type="submit"><i
+                            class="fab fa-google me-2"></i><object data="/images/icons/googleplus-30.svg" height="48px"
+                            width="48px"></object> Log in with google</button>
+                </form>
+
+                <form action="/auth/facbook" method="POST">
+                    <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998; gap: 21px;"
+                        type="submit"><i class="fab fa-facebook-f me-2"></i><object data="/images/icons/facbookhome.svg"
+                            style="margin-left: 13px;" height="28px" width="28px"></object> Log in with
+                        facebook</button>
+                </form>
+                <form action="/auth/line" method="POST">
+                    <button class="btn btn-lg btn-block btn-primary mb-2"
+                        style="padding-right: 37px; gap: 13px; background-color: #06c755;" type="submit"><i
+                            class="fab fa-facebook-f me-2"></i><object data="/images/icons/linehome.svg"
+                            style="margin-right: 5px;" height="33px" width="33px"></object>Log in with Line</button>
+                </form>
+            </div>
+        </div>
+        <div class="forgetandsignup">
+            <p>Forget the UserName or Passowrd, Sorry Can't help ¯\_(ツ)_/¯</p>
+        </div>
+
+    </div>
+
+
+
+
+    
+    <%- include("partials/footer") %>

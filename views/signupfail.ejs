@@ -1,0 +1,62 @@
+<%- include("partials/header") %>
+    <link rel="stylesheet" href="styles/signup.css">
+    </head>
+
+
+
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form action="/register" method="POST">
+            <div class="inputcontainer">
+                <div class="emailcontainer">
+                    <input type="email" value="" required onkeyup="this.setAttribute('value', this.value)" name="email" autocomplete="off">
+                    <label for="email">Email</label>
+
+                    <p>This email has already been used T^T</p>
+
+                </div>
+
+                <div class="passwordcontainer">
+                    <input type="password" value="" required onkeyup="this.setAttribute('value', this.value)"
+                        name="password" autocomplete="off">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="sighupbtn">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="otherbtncontainer">
+            <h3>
+                <span class="linebefore"></span>
+                or sign with other method
+                <span class="lineafter"></span>
+            </h3>
+            <div class="otherbtn">
+                <form action="/auth/google" method="POST" style="outline: none;">
+                    <button class="googlebtn" role="button" style="outline: none;">
+                        <object data="/images/icons/google.svg" height="42px" width="42px"></object>
+                        <p>Google</p>
+                    </button>
+                </form>
+
+                <form action="/auth/facbook" method="POST" style="outline: none;">
+                    <button class="googlebtn" role="button" style="outline: none;">
+                        <object data="/images/icons/facbook.svg" height="42px" width="42px"></object>
+                        <p>Facbook</p>
+                    </button>
+                </form>
+
+                <form action="/auth/line" method="POST" style="outline: none;">
+                    <button class="googlebtn" role="button" style="outline: none;">
+                        <object data="/images/icons/line.svg" height="42px" width="42px"></object>
+                        <p>Line</p>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+ <%- include("partials/footer") %>

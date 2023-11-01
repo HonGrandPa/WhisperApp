@@ -1,0 +1,37 @@
+<%- include("partials/header") %>
+    <link rel="stylesheet" href="/styles/submit.css">
+
+    </header>
+
+
+
+
+    <div class="container">
+        <div class="titlecontainer">
+            <h1 class="firstline">Have A <span>Secret</span> ?</h1>
+            <h1 class="secondline"><span>Whisper</span> to US <img src="/images/pics/icons8-whispering-100.png"
+                    alt="whiper"></h1>
+        </div>
+
+        <div class="secretcontainer">
+            
+            <form action="/submit" method="POST">
+            <div class="inputcontainer">
+                <input type="text" name="secret" id="secret" required autocomplete="off">
+                <label for="secret">Whisper a <span>Secret</span> to Us...</label>
+            </div>
+            <div class="submitbtn">
+                <input type="submit">
+                <p class="cute">( ﾉ˵･ω･˵ )ﾉ</p>
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <%- include("partials/footer") %>

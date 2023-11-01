@@ -1,0 +1,250 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Signika', sans-serif;
+}
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #BA94D1, #FFFBF5);
+    overflow: hidden;
+    padding-top: 8%;
+
+
+}
+
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    background-color: rgb(232, 232, 232, 0.25);
+    border: 1px solid gray;
+    max-width: 500px;
+    border-radius: 25px;
+
+}
+
+.container>h1 {
+
+    font-size: 2.8rem;
+    margin-top: 40px;
+    margin-bottom: 25px;
+
+}
+
+.container>form {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+
+.inputcontainer input {
+
+    color: rgb(11, 11, 11);
+    height: 2.5rem;
+    width: 70%;
+    border-radius: 10px;
+    margin-left: 16%;
+    font-size: 1rem;
+    padding-left: 10px;
+    background: rgb(232, 232, 232, 0.25);
+    border: 1px solid rgb(180, 180, 179);
+    
+}
+
+label {
+
+    color: rgb(76, 76, 76, 0.8);
+}
+.inputcontainer input:focus {
+
+    outline: none;
+
+}
+
+.emailcontainer {
+
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.emailcontainer>label {
+
+    position: absolute;
+    left: 84px;
+    top: 8px;
+    transition: 0.5s;
+
+}
+
+.emailcontainer input:focus~label,
+.emailcontainer input:valid~label,
+.emailcontainer input:not([value=""])~label {
+
+    top: -1rem;
+    left: 86px;
+    font-size: 0.65rem;
+
+}
+
+
+
+.emailcontainer p {
+    position: absolute;
+    font-size: 0.65rem;
+    right: 15%;
+    color: rgba(76, 76, 76, 0.8); 
+    transition: .3s;
+    
+}
+
+
+.emailcontainer input:focus~p,
+.emailcontainer input:valid~p,
+.emailcontainer input:not([value=""])~p {
+
+    color: transparent;
+
+}
+
+
+.passwordcontainer {
+
+    position: relative;
+    margin-bottom: 10px;
+
+}
+
+.passwordcontainer>label {
+
+    position: absolute;
+    left: 84px;
+    top: 8px;
+    transition: 0.5s;
+}
+
+
+.passwordcontainer input:focus~label,
+.passwordcontainer input:valid~label,
+.passwordcontainer input:not([value=""])~label {
+
+    top: -1rem;
+    left: 86px;
+    font-size: 0.65rem;
+
+}
+
+
+
+
+.sighupbtn button {
+
+    height: 40px;
+    width: 80px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    margin-left: 68%;
+    background-color: rgb(254, 251, 246, 0.35);
+    border: 1.4px solid rgb(180, 180, 179);
+    outline: none;
+    color: rgb(76, 76, 76);
+
+
+}
+
+
+.sighupbtn button:hover {
+
+    box-shadow: 2px 2px 2px 0px rgb(113, 111, 129, 0.4);
+}
+
+.sighupbtn button:focus {
+
+    background-color: rgb(152, 110, 173, 0.2)
+
+}
+
+
+.otherbtncontainer {
+
+    width: 100%;
+}
+
+.otherbtncontainer > h3 {
+    color: rgb(76, 76, 76, 0.8);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h3 span {
+    background: #fff;
+    margin: 0 10px;
+  }
+  h3:before,
+  h3:after {
+    background: rgb(125, 124, 124, 0.5);
+    height: 1.5px;
+    flex: 1;
+    content: '';
+  }
+  h3.left:after {
+    background: none;
+  }
+  h3.right:before {
+    background: none;
+  }
+
+
+  .otherbtn {
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  .googlebtn {
+
+    height: 80px;
+    width: 80px;
+    outline: none;
+    border-radius: 25px;
+    padding-top: 5px;
+    transition: .3s;
+    background-color: transparent;
+    border: none;
+  }
+
+
+  .googlebtn p {
+
+
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    color: rgb(76, 76, 76, 0.8);
+    
+  }
+
+  .googlebtn:hover {
+
+    
+    background-color: rgb(243, 241, 245, 0.45)
+  }
+
+

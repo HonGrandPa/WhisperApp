@@ -1,0 +1,196 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Signika', sans-serif;
+
+}
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #BA94D1, #FFFBF5);
+  
+
+}
+
+
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid none;
+    max-width: 1050px;
+    margin-top: 30px;
+    border-radius: 25px;
+
+}
+
+
+.tiltecontainer {
+
+    padding-top: 50px;
+
+
+
+}
+
+.tiltecontainer>h1 {
+
+    font-size: 6.5rem;
+    margin-bottom: -10px;
+    font-family: 'Cabin Sketch', sans-serif;
+    font-weight: 800;
+    color: rgb(9, 8, 8, 0.9)
+}
+
+.tiltecontainer h2 {
+
+
+    font-size: 3rem;
+    padding-left: 23%;
+    padding-bottom: 7%;
+    font-family: 'Cabin Sketch', sans-serif;
+    font-weight: 800;
+    color: rgb(9, 8, 8, 0.9)
+}
+
+.tiltecontainer .low {
+
+    font-family: 'Nosifer', sans-serif;
+    font-weight: 700;
+    transition: 0.3s;
+
+}
+
+
+.tiltecontainer .low:hover {
+
+    color: rgb(103, 65, 136, 0.68);
+
+}
+
+.content {
+
+    width: 85%;
+
+
+}
+
+
+.content * {
+
+   
+    min-height: 3rem;
+    border: 2px double rgb(103, 65, 136, 0.75);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.62rem;
+    align-items: center;
+    padding-top: .5rem;
+    font-family: 'Cabin Sketch', sans-serif;
+    color: rgb(65, 53, 67);
+
+}
+
+
+.buttoncontainer {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 5%;
+    padding-left: 5px;
+   
+}
+
+.logoutbtn {
+
+    height: 50px;
+    width: 120px;
+    border-radius: 25px;
+    border: none;
+    
+    cursor: pointer;
+    transition: .3s;
+}
+
+.logoutbtn input {
+
+   
+    font-size: 1.38rem;
+    top: 7px;
+    right: 23%;
+    text-decoration: none;
+    border-radius: 25px;
+    border: .125px solid rgb(114, 112, 112);
+    height: 50px;
+    width: 120px;
+    color: rgb(65, 53, 67);
+    background-color: transparent;
+    
+}
+
+
+.logoutbtn:hover {
+
+    background-color: rgb(165, 143, 170, .4);
+}
+
+
+.submitbtn {
+
+    height: 50px;
+    width: 180px;
+    border-radius: 25px;
+    border: 0.125px solid rgb(114, 112, 112);
+    position: relative;
+    margin-left: 20px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.submitbtn button {
+
+    position: absolute;
+    font-size: 1.38rem;
+    top: 7px;
+    right: 11%;
+    text-decoration: none;
+    color: rgb(65, 53, 67);
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+   
+}
+
+
+.submitbtn:hover {
+
+    background-color: rgb(165, 143, 170, 0.4)
+}
+
+
+.fu {
+
+    font-size: 5.5rem;
+}
+
+.su {
+
+    font-size: 4.5rem;
+}
+
+
+.tu {
+
+    font-size: 3rem;
+}

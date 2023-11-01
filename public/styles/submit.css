@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Signika', sans-serif;
+}
+
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #BA94D1, #FFFBF5);
+    overflow: hidden;
+    padding-top: 75px;
+
+}
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 900px;
+    margin-top: 50px;
+
+}
+
+.titlecontainer {
+
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.titlecontainer h1 {
+
+    font-size: 3.5rem;
+    font-family: 'Walter Turncoat', cursive;
+    font-weight: 600;
+    color: rgb(9, 8, 8, 0.9)
+}
+
+
+.firstline span {
+
+    font-family: 'Nosifer', sans-serif;
+    font-weight: 100;
+    font-size: smaller;
+}
+
+.secondline {
+
+    margin-left: 40px;
+}
+
+.secondline span {
+
+    font-family: 'Nosifer', sans-serif;
+    font-weight: 100;
+    font-size: smaller;
+}
+
+
+.secretcontainer {
+
+
+    padding: 25px 35px 0px 35px;
+    width: 100%;
+
+}
+
+.inputcontainer {
+
+    position: relative;
+}
+
+
+.inputcontainer input {
+
+    width: 100%;
+
+    min-height: 3.2rem;
+    padding-left: 18px;
+    border-radius: 15px;
+    font-size: 1.25rem;
+    padding-top: 1px;
+    outline: none;
+    background-color: rgb(255, 251, 245, 0.45);
+    border: 1px solid #ddd;
+    color: rgb(9, 8, 8, 0.72)
+    
+
+}
+
+
+.inputcontainer label {
+
+    position: absolute;
+    left: 2.8%;
+    top: 12px;
+    transition: .3s;
+    color: gray;
+
+}
+
+
+.inputcontainer input:focus~label,
+.inputcontainer input:valid~label {
+
+
+    color: transparent;
+
+
+}
+
+
+.submitbtn {
+
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-left: 10%;
+
+}
+
+
+.submitbtn>input {
+
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(233, 232, 232, 0.25);
+    border: 1px solid gray;
+    
+    
+}
+
+.submitbtn p {
+
+    margin-top: 8px;
+    color: transparent;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    transition: 0.3s;
+}
+
+
+.submitbtn>input:hover {
+
+    background-color: rgb(232, 232, 232, 0.25);
+    box-shadow: 2px 2px 2px 0px rgb(113, 111, 129, 0.4);
+}
+
+.submitbtn > input:hover ~ p {
+
+    color: gray;
+    
+}
+
