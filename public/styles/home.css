@@ -386,7 +386,7 @@ h3 {
         font-family: 'Nosifer', sans-serif;
         text-align: center;
         font-size: 3rem;
-        padding-bottom: 35px;
+        padding-bottom: 0px;
         color: rgba(27, 29, 29, 0.72);
     }
 
@@ -415,7 +415,8 @@ h3 {
         font-size: 0.8rem;
         padding-right: 0;
         padding-top: 15px;
-        color: gray;
+        outline: none;
+        color: rgb(76, 76, 76);
         outline: none;
     }
 
@@ -438,8 +439,8 @@ h3 {
     
 
     .forgetandsignup p {
-        padding-bottom: 20px;
-        font-size: small;
+        padding-bottom: 0%;
+        font-size: 0.6rem;
         color: gray;
     }
     

@@ -219,7 +219,8 @@ img {
         height: 35px;
         border-radius: 20px;
         background-color: rgb(233, 232, 232, 0.25);
-        border: 1px solid gray;
+        outline: none;
+        color: rgb(76, 76, 76);
     }
 
 }

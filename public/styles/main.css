@@ -199,7 +199,7 @@ body {
 @media screen and (max-width: 480px) {
 
     .tiltecontainer>h1 {
-        font-size: 5.2rem;
+        font-size: 4.5rem;
         margin-bottom: -10px;
         font-family: 'Cabin Sketch', sans-serif;
         font-weight: 800;
@@ -207,15 +207,15 @@ body {
     }
 
     .fu {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .su {
-        font-size: 3.2rem;
+        font-size: 2rem;
     }
 
     .tu {
-        font-size: 2.2rem;
+        font-size: 1rem;
     }
 
     img {
