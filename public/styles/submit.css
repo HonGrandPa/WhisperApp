@@ -196,7 +196,7 @@ img {
         color: gray;
     }
 
-    
+
     .container {
         display: flex;
         justify-content: center;
@@ -215,17 +215,18 @@ img {
         padding-left: 25%;
     }
 
-    .submitbtn>button {
 
-        position: absolute;
+    .submitbtn>button {
+        /* position: absolute; */
         font-size: 1rem;
         top: 5px;
         right: 18px;
         text-decoration: none;
         color: rgb(65, 53, 67);
         background-color: transparent;
-        border: transparent;
+        /* border: transparent; */
         outline: none;
-    }
+    
+}
 
 }
