@@ -138,6 +138,7 @@ app.get("/", function (req, res) {
   } else {
 
     res.render("home");
+
   }
 });
 
