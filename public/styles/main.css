@@ -289,11 +289,11 @@ body {
         position: absolute;
         font-size: 1rem;
         top: 5px;
-        right: 12px;
+        right: 5px;
         text-decoration: none;
         color: rgb(65, 53, 67);
         background-color: transparent;
-        border: transparent;
+        border: none;
         outline: none;
     }
 
