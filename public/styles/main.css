@@ -266,7 +266,7 @@ body {
         right: 23%;
         text-decoration: none;
         border-radius: 25px;
-        border: 0.125px solid rgb(114, 112, 112);
+        border: 0.5px solid gray;
         height: 35px;
         width: 80px;
         color: rgb(65, 53, 67);
@@ -277,7 +277,7 @@ body {
         height: 35px;
         width: 140px;
         border-radius: 25px;
-        border: 0.125px solid rgb(114, 112, 112);
+        border: 0.5px solid gray;
         position: relative;
         margin-left: 20px;
         transition: .3s;
@@ -289,12 +289,12 @@ body {
         position: absolute;
         font-size: 1rem;
         top: 5px;
-        right: 17px;
+        right: 12px;
         text-decoration: none;
+        color: rgb(65, 53, 67);
         background-color: transparent;
-        border: 0.5px solid gray;
+        border: transparent;
         outline: none;
-        color: rgb(76, 76, 76);
     }
 
 }
