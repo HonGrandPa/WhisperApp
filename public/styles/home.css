@@ -443,6 +443,14 @@ h3 {
         font-size: 0.6rem;
         color: gray;
     }
+
+    .loginbtn > button {
+
+        border: 0.5px solid gray;
+        outline: none;
+        color: rgb(76, 76, 76);
+        
+    }
     
 
 }

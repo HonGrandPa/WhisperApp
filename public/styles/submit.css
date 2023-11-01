@@ -129,13 +129,14 @@ img {
 }
 
 
-.submitbtn>input {
+.submitbtn>button {
 
     width: 120px;
     height: 40px;
     border-radius: 20px;
     background-color: rgb(233, 232, 232, 0.25);
     border: 1px solid gray;
+    outline: none;
 
 
 }
@@ -153,13 +154,13 @@ img {
 }
 
 
-.submitbtn>input:hover {
+.submitbtn>button:hover {
 
     background-color: rgb(232, 232, 232, 0.25);
     box-shadow: 2px 2px 2px 0px rgb(113, 111, 129, 0.4);
 }
 
-.submitbtn>input:hover~p {
+.submitbtn>button:hover~p {
 
     color: gray;
 
@@ -214,7 +215,7 @@ img {
         padding-left: 25%;
     }
 
-    .submitbtn>input {
+    .submitbtn>button {
         width: 80px;
         height: 35px;
         border-radius: 20px;
