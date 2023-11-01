@@ -4,6 +4,7 @@
   },
   "name": "whisper-app",
   "version": "1.0.0",
+  
   "description": "",
   "main": "server.js",
   "type": "module",

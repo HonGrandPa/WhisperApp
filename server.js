@@ -131,15 +131,15 @@ passport.use(new LineStrategy({
 app.get("/", function (req, res) {
 
 
-  if (req.isAuthenticated()) {
+  // if (req.isAuthenticated()) {
 
-    res.redirect("/main");
+  //   res.redirect("/main");
 
-  } else {
+  // } else {
 
     res.render("home");
 
-  }
+  //}
 });
 
 //dir to regis page
@@ -390,13 +390,8 @@ app.post("/submit", function (req, res) {
 })
 
 
-app.listen(process.env.PORT || port, function (err) {
+app.listen(process.env.PORT || port, () => {
 
-  if (err) {
-    console.log(err);
-  } else {
-
-    console.log(`sucessfully connected to ${port}`)
-  }
+  console.log("connect")
 
 });
