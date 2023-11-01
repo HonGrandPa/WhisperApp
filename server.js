@@ -94,7 +94,7 @@ passport.deserializeUser(function (user, cb) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/goolge/secret"
+  callbackURL: "https://honpapanowhisper-1d0dfdb9fa9a.herokuapp.com/auth/goolge/secret"
 },
   function (accessToken, refreshToken, profile, cb) {
     Users.findOrCreate({ googleId: profile.id }, function (err, user) {
@@ -106,7 +106,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
   clientID: process.env.APP_ID,
   clientSecret: process.env.APP_SECRET,
-  callbackURL: "http://localhost:3000/auth/facebook/secret"
+  callbackURL: "https://honpapanowhisper-1d0dfdb9fa9a.herokuapp.com/auth/facebook/secret"
 },
   function (accessToken, refreshToken, profile, cb) {
     Users.findOrCreate({ facebookId: profile.id }, function (err, user) {
@@ -118,7 +118,7 @@ passport.use(new FacebookStrategy({
 passport.use(new LineStrategy({
   channelID: process.env.LINE_CHANNEL_ID,
   channelSecret: process.env.LINE_CHANNEL_SECRET,
-  callbackURL: "http://localhost:3000/auth/line/secret"
+  callbackURL: "https://honpapanowhisper-1d0dfdb9fa9a.herokuapp.com/auth/line/secret"
 },
   function (accessToken, refreshToken, profile, done) {
     Users.findOrCreate({ id: profile.id }, function (err, user) {
